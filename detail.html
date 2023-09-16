@@ -3,13 +3,55 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=H, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Countries App</title>
 </head>
 
-<body>
-    <h1>Hi details</h1>
+<body class="bg-gray-100">
+    <div class="max-w-md mx-auto ">
+        <Header class="bg-white shadow-sm flex flex-row justify-between item-center  px-4 py-6">
+            <p class="font-bold">Where in the World</p>
+            <div>
+                <i class="fa-thin fa-moon"></i>
+                <span class="font-medium text-xs">Dark Mode</span>
+            </div>
+        </Header>
+        <main>
+            <div id="back" class="text-center w-1/5 bg-white m-5 py-1 px-4 rounded-sm shadow-lg hover:cursor-pointer">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Back</span>
+            </div>
+            <!-- COUNTRY DETAILS -->
+            <div class="px-8 my-10 space-y-6">
+                <img id="flag" class="w-full" src="" alt="">
+                <p class="text-xl font-semibold" id="name"></p>
+                <div class="space-y-1">
+                    <p class="detail-text">Native name: <span id="native-name"></span></p>
+                    <p class="detail-text">Population: <span id="population"></span></p>
+                    <p class="detail-text">Region: <span id="reg"></span></p>
+                    <p class="detail-text">Sub Region: <span id="sub-reg"></span></p>
+                    <p class="detail-text">Capital: <span id="capito"></span></p>
+                </div>
+                <div>
+                    <p class="detail-text">Top Level Domain: <span id="domain"></span></p>
+                    <p class="detail-text">Currencies: <span id="currency"></span></p>
+                    <p class="detail-text">Languages: <span id="languages"></span></p>
+                </div>
+
+                <div class="space-y-2">
+                    <p class="font-semibold">Border Countries:</p>
+                    <div id="borderz" class="flex w-full items-center justify-center gap-4 flex-wrap">
+
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="detail.js"></script>
 </body>
 
 </html>

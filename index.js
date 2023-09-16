@@ -103,3 +103,5 @@ document.querySelector("#filter").addEventListener("change", (e) => {
     createDom(data, filter);
   });
 });
+
+// country details
