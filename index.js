@@ -31,7 +31,7 @@ function createDom(countriesList, filter) {
   }
 
   cardCont.innerHTML = "";
-  for (let index = 0; index <= countries.length; index++) {
+  for (let index = 0; index < countries.length; index++) {
     let card = document.createElement("a");
     card.addEventListener("click", () => {
       location.assign(`detail.html#${countries[index].name}`);
@@ -49,8 +49,8 @@ function createDom(countriesList, filter) {
     cardCont.appendChild(card);
 
     let cardImage = document.createElement("img");
-    cardImage.setAttribute("src", countries[index].flags.png);
-    let imageStyle = ["flex-1", "w-full"];
+    cardImage.setAttribute("src", countries[index].flags.svg);
+    let imageStyle = ["flex-1", "w-full", "lg:h-2/3", "object-fit"];
     cardImage.classList.add(...imageStyle);
     card.appendChild(cardImage);
 
