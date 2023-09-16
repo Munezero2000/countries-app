@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Countries App</title>
+</head>
+
+<body>
+    <div class="max-w-xs mx-auto ">
+        <Header class="flex flex-row justify-between item-center  px-4 py-6">
+            <p class="font-bold">Where in the World</p>
+            <div>
+                <i class="fa-thin fa-moon"></i>
+                <span class="font-medium text-xs">Dark Mode</span>
+            </div>
+        </Header>
+        <main class="p-4 bg-gray-50">
+            <div class="flex items-center justify-center bg-white p-2 rounded-lg">
+                <i class="fa-solid fa-magnifying-glass bg-white p"></i>
+                <input id="search" class="shodow-sm w-full outline-0 px-2" type="text" placeholder="Search country"
+                    autocomplete="off">
+            </div>
+            <select
+                class="py-3 px-4 my-3 outline-0 pr-9 block w-3/5 border-gray-200 rounded-md text-sm focus:border-blue-500 focus:ring-blue-500"
+                name="" id="filter">
+                <option selected hidden value="">Filter by Region</option>
+                <option value="africa">Africa</option>
+                <option value="america">America</option>
+                <option value="asia">Asia</option>
+                <option value="europe">Europe</option>
+                <option value="oceania">Oceania</option>
+            </select>
+            <div id="card-container" class="space-y-4">
+            </div>
+        </main>
+    </div>
+    <script src="index.js"></script>
+</body>
+
+</html>
