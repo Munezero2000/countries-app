@@ -43,6 +43,7 @@ function createDom(countriesList, filter) {
       "bg-white",
       "rounded-lg",
       "overflow-hidden",
+      "hover:cursor-pointer",
     ];
     card.classList.add(...cardStyle);
     cardCont.appendChild(card);
