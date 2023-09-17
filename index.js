@@ -34,7 +34,9 @@ function createDom(countriesList, filter) {
   for (let index = 0; index < countries.length; index++) {
     let card = document.createElement("a");
     card.addEventListener("click", () => {
-      location.assign(`detail.html#${countries[index].name}`);
+      location.assign(
+        `detail.html#${countries[index].name.toLowerCase().replace(/\s/g, "")}`
+      );
     });
     let cardStyle = [
       "w-full",

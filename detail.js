@@ -26,7 +26,8 @@ getData().then((countries) => {
 // Function to render the DOM
 function renderDOM(countries) {
   let country = countries.find((pay) => {
-    return pay.name.toLowerCase() === currentCountry.toLowerCase();
+    console.log(currentCountry);
+    return pay.name.toLowerCase().replace(/\s/g, "") === currentCountry;
   });
 
   document.querySelector("#flag").setAttribute("src", `${country.flags.png}`);
@@ -56,7 +57,7 @@ function renderDOM(countries) {
   let borderings = document.querySelector("#borderz");
 
   for (let i = 0; i < borderingCountries.length; i++) {
-    let single = document.createElement("p");
+    let single = document.createElement("a");
     let singleStyle = [
       "bg-white",
       "p-2",
@@ -64,17 +65,24 @@ function renderDOM(countries) {
       "shadow-lg",
       "flex-1",
       "text-center",
+      "hover:cursor-pointer",
     ];
     single.classList.add(...singleStyle);
-    console.log(borderingCountries[i]);
     single.textContent = borderingCountries[i];
     borderings.appendChild(single);
+    single.addEventListener("click", () => {
+      console.log(single.textContent);
+      location.assign(
+        `detail.html#${single.textContent.toLowerCase().replace(/\s/g, "")}`
+      );
+      location.reload();
+    });
   }
 }
 
 function findCountries(borders, countries) {
   let result = [];
-  for (let i = 0; i <= borders.length; i++) {
+  for (let i = 0; i < borders.length; i++) {
     for (let j = 0; j < countries.length; j++) {
       if (countries[j].alpha3Code === borders[i]) {
         result.push(countries[j].name);
